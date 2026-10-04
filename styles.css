@@ -748,3 +748,13 @@ header .brand img.brand-wordmark{
   object-fit:contain;
   display:block;
 }
+
+
+/* Language switcher */
+.lang-switch{display:flex;align-items:center;gap:5px;margin-left:14px;white-space:nowrap;font-size:12px;color:#777}
+.lang-switch button{appearance:none;border:0;background:transparent;padding:6px 3px;color:inherit;font:inherit;font-weight:600;cursor:pointer;border-bottom:2px solid transparent}
+.lang-switch button:hover,.lang-switch button.active{color:var(--sage-600);border-bottom-color:currentColor}
+@media(max-width:820px){
+  header>.container.nav>.lang-switch{display:none}
+  .mobile-nav-panel .lang-switch{justify-content:center;margin:18px 0 6px;font-size:14px}
+}
