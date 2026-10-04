@@ -1,15 +1,145 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Redirecting…</title>
-<meta http-equiv="refresh" content="0; url=forms-and-resources/">
-<link rel="canonical" href="forms-and-resources/">
-<script>
-window.location.replace("forms-and-resources/");
-</script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Forms & Resources — LivMarkins Insurance</title>
+  <meta name="description" content="Download client forms and helpful resources from LivMarkins Insurance."/>
+  <meta property="og:image" content="https://alex-makidon.github.io/livmarkins/assets/share-image.png?v=5">
+  <link rel="stylesheet" href="styles.css?v=footer-icons-20261004"/>
 </head>
+
 <body>
-<p>Redirecting to <a href="forms-and-resources/">Forms &amp; Resources</a>…</p>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <img src="assets/logo_name.png?v=5" alt="LivMarkins" class="brand-wordmark"/>
+    </div>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="home-link">Home</a></li>
+        <li><a href="about.html" class="about-link">About</a></li>
+<li><a href="/LivMarkinsTest/trucking/" class="trucking-link">Trucking</a></li>
+        <li><a href="quote.html" class="quote-link">Get a Quote</a></li>
+        <li><a href="resources.html" class="res-link active" aria-current="page">Forms &amp; Resources</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+  </div>
+
+  <div id="mobileNav" class="mobile-nav" hidden>
+    <div class="mobile-nav-panel">
+      <button class="nav-close" aria-label="Close menu">✕</button>
+      <ul>
+        <li><a href="index.html" class="home-link">Home</a></li>
+        <li><a href="about.html" class="about-link">About</a></li>
+<li><a href="/LivMarkinsTest/trucking/" class="trucking-link">Trucking</a></li>
+        <li><a href="quote.html" class="quote-link">Get a Quote</a></li>
+        <li><a href="resources.html" class="res-link" aria-current="page">Forms &amp; Resources</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-backdrop"></div>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="container hero-inner">
+
+    <div>
+      <img src="assets/logo.png" alt="LivMarkins Insurance" class="hero-full-logo"/>
+      <h1>Forms & Resources</h1>
+      <p>Here you can access important forms and downloads.</p>
+    </div>
+
+    <div class="card">
+
+      <h3>Available Downloads</h3>
+
+      <div id="pdfList">
+
+        <div class="resource-item">
+          <a
+            href="assets/resources/cms-marketplace-form.pdf"
+            target="_blank"
+            rel="noopener"
+            class="resource-link"
+            aria-label="Open CMS Marketplace Form PDF in a new tab"
+          >
+            <strong>CMS Marketplace Form</strong>
+          </a>
+
+          <p class="muted">
+            Before we can begin to assist you with your health insurance needs please fill, sign, and return to us.
+          </p>
+
+          <!-- Optional: direct download link -->
+          <p style="margin-top:8px;">
+            <a
+              href="assets/resources/cms-marketplace-form.pdf"
+              download="CMS-Marketplace-Form.pdf"
+              class="muted"
+              aria-label="Download CMS Marketplace Form PDF"
+            >
+              Download PDF
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <strong>LivMarkins Insurance</strong><br/>
+      <a class="footer-contact-link" href="tel:+12155155975"><svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.91.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Phone: 215-515-5975</span></a>
+    </div>
+
+    <div>
+      <strong>Lines We Cover</strong>
+      <ul class="muted">
+        <li>Health</li>
+        <li>Life</li>
+        <li>Home & Auto</li>
+        <li><a href="/LivMarkinsTest/trucking/">Trucking</a></li>
+        <li>Business Insurance</li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Company</strong>
+      <ul class="muted">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="quote.html">Get a Quote</a></li>
+        <li><a href="resources.html">Forms & Resources</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <small>© <span id="year"></span> LivMarkins Insurance.</small>
+  </div>
+
+</footer>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear()
+</script>
+
+<script src="script.js?v=trucking-20261004" defer></script>
+
 </body>
-</html>
