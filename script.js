@@ -285,3 +285,69 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwpnjvvl";
 if (!document.getElementById('splash')) {
   document.body.classList.add('page-ready');
 }
+
+
+/* ===== Language switcher — English / Russian / Ukrainian ===== */
+(function () {
+  const translations = {
+    ru: {
+      "Home":"Главная","About":"О нас","Get a Quote":"Получить расчёт","Forms & Resources":"Формы и материалы",
+      "Coverage that fits your life.":"Страховая защита, которая подходит именно вам.",
+      "LivMarkins Insurance helps families and businesses protect what matters—without the jargon.":"LivMarkins Insurance помогает семьям и бизнесу защищать самое важное — просто и понятно.",
+      "About Us":"О нас","Why Insurance?":"Зачем нужна страховка?",
+      "You can’t control everything, but insurance lets you sleep at night knowing you’re covered when things go sideways.":"Не всё в жизни можно предусмотреть, но страховка даёт уверенность, что вы защищены, если что-то пойдёт не по плану.",
+      "Health":"Медицинское страхование","Life":"Страхование жизни","Home & Auto":"Дом и авто","Trucking":"Грузоперевозки","Business Insurance":"Страхование бизнеса",
+      "Plans for individuals, families, and small businesses.":"Планы для частных лиц, семей и малого бизнеса.",
+      "Protect your family or partners with income replacement, debt coverage, and legacy planning.":"Защитите семью или деловых партнёров: компенсация утраченного дохода, покрытие долговых обязательств и планирование наследства.",
+      "Personalized coverage for your home, auto, jewelry, and liability.":"Индивидуальная страховая защита для дома, автомобиля, ювелирных изделий и гражданской ответственности.",
+      "We work with over a dozen carriers to get the best coverage to protect your rig, cargo, and liability exposures.":"Мы сотрудничаем более чем с десятком страховых компаний, чтобы подобрать оптимальную защиту для вашего грузовика, груза и ответственности.",
+      "We are here to support all of your business endeavors. From 1 employee to a 50 employee company we will work with you to meet your needs.":"Мы помогаем защитить ваш бизнес на любом этапе — от компании с одним сотрудником до команды из 50 человек. Подберём покрытие под ваши потребности.",
+      "Who We Work With":"Наши страховые партнёры","Lines We Cover":"Виды страхования","Company":"Компания","Call Now":"Позвонить"
+    },
+    uk: {
+      "Home":"Головна","About":"Про нас","Get a Quote":"Отримати розрахунок","Forms & Resources":"Форми та матеріали",
+      "Coverage that fits your life.":"Страховий захист, що відповідає вашому життю.",
+      "LivMarkins Insurance helps families and businesses protect what matters—without the jargon.":"LivMarkins Insurance допомагає сім’ям і бізнесу захищати найважливіше — просто й зрозуміло.",
+      "About Us":"Про нас","Why Insurance?":"Навіщо потрібне страхування?",
+      "You can’t control everything, but insurance lets you sleep at night knowing you’re covered when things go sideways.":"Не все в житті можна передбачити, але страхування дає впевненість, що ви захищені, якщо щось піде не за планом.",
+      "Health":"Медичне страхування","Life":"Страхування життя","Home & Auto":"Дім та авто","Trucking":"Вантажні перевезення","Business Insurance":"Страхування бізнесу",
+      "Plans for individuals, families, and small businesses.":"Плани для окремих осіб, сімей і малого бізнесу.",
+      "Protect your family or partners with income replacement, debt coverage, and legacy planning.":"Захистіть сім’ю або ділових партнерів: компенсація втраченого доходу, покриття боргових зобов’язань і планування спадщини.",
+      "Personalized coverage for your home, auto, jewelry, and liability.":"Індивідуальний страховий захист для дому, автомобіля, ювелірних виробів і цивільної відповідальності.",
+      "We work with over a dozen carriers to get the best coverage to protect your rig, cargo, and liability exposures.":"Ми співпрацюємо більш ніж із десятком страхових компаній, щоб підібрати оптимальний захист для вашої вантажівки, вантажу та відповідальності.",
+      "We are here to support all of your business endeavors. From 1 employee to a 50 employee company we will work with you to meet your needs.":"Ми допомагаємо захистити ваш бізнес на будь-якому етапі — від компанії з одним працівником до команди з 50 осіб. Підберемо покриття відповідно до ваших потреб.",
+      "Who We Work With":"Наші страхові партнери","Lines We Cover":"Види страхування","Company":"Компанія","Call Now":"Зателефонувати"
+    }
+  };
+  const original = new WeakMap();
+  const translatable = () => document.querySelectorAll('h1,h2,p,strong,li,a,button,.badge,.acc-panel-inner');
+  function setLanguage(lang) {
+    const dict = translations[lang] || {};
+    translatable().forEach(el => {
+      if (el.children.length && !el.classList.contains('acc-trigger')) return;
+      const text = el.textContent.trim();
+      if (!original.has(el)) original.set(el, text);
+      const source = original.get(el);
+      if (el.classList.contains('acc-trigger')) {
+        const label = Array.from(el.childNodes).find(n => n.nodeType === 3 && n.textContent.trim());
+        if (label) label.textContent = ' ' + (lang === 'en' ? source : (dict[source] || source)) + ' ';
+      } else if (lang === 'en') el.textContent = source;
+      else if (dict[source]) el.textContent = dict[source];
+    });
+    document.documentElement.lang = lang === 'uk' ? 'uk' : lang;
+    localStorage.setItem('livmarkins-lang', lang);
+    document.querySelectorAll('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  }
+  function makeSwitcher() {
+    const wrap=document.createElement('div');
+    wrap.className='lang-switch';
+    wrap.setAttribute('aria-label','Language');
+    wrap.innerHTML='<button type="button" data-lang="en">EN</button><span>·</span><button type="button" data-lang="ru">РУС</button><span>·</span><button type="button" data-lang="uk">УКР</button>';
+    wrap.addEventListener('click', e => { const b=e.target.closest('button[data-lang]'); if(b) setLanguage(b.dataset.lang); });
+    return wrap;
+  }
+  document.querySelector('.nav-desktop')?.after(makeSwitcher());
+  const mobilePanel=document.querySelector('.mobile-nav-panel');
+  if(mobilePanel) mobilePanel.insertBefore(makeSwitcher(), mobilePanel.querySelector('.mobile-cta') || null);
+  setLanguage(localStorage.getItem('livmarkins-lang') || 'en');
+})();
