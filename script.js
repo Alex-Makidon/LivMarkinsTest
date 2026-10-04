@@ -219,6 +219,6 @@ function switcher(){
  d.addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(b)apply(b.dataset.lang)});return d;
 }
 const desktopNav=document.querySelector('.nav-desktop');if(desktopNav){const ul=desktopNav.querySelector('ul');const li=document.createElement('li');li.className='lang-menu-item';li.appendChild(switcher());ul?.appendChild(li);}
-const panel=document.querySelector('.mobile-nav-panel');if(panel){const ul=panel.querySelector('ul');const li=document.createElement('li');li.className='lang-menu-item';li.appendChild(switcher());ul?.appendChild(li);}
+const panel=document.querySelector('.mobile-nav-panel');if(panel){const li=document.createElement('div');li.className='lang-menu-item mobile-language-last';li.appendChild(switcher());panel.appendChild(li);}
 apply(localStorage.getItem('livmarkins-lang')||'en');
 })();
