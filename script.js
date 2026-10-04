@@ -162,3 +162,59 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwpnjvvl"; // ✅ real endpoi
     a.addEventListener('click', () => close(false));
   });
 })();
+
+
+/* ===== Full-site language switcher: EN / RU / UK ===== */
+(function(){
+const T={ru:{
+"Home":"Главная","About":"О нас","Trucking":"Грузоперевозки","Get a Quote":"Получить расчёт","Forms & Resources":"Формы и материалы","About Us":"О нас",
+"About Us":"О нас","Our Promise":"Наше обещание","Personal guidance and support when you need it.":"Персональная помощь и поддержка именно тогда, когда она вам нужна.",
+"Built on Relationships":"В основе — доверительные отношения",
+"We’re not a 1-800 number, we’re a family-owned and operated insurance agency built on real relationships and real care. With over 15 years of experience in the insurance industry, we’ve seen firsthand how confusing and impersonal insurance can feel. That’s exactly why we do things differently.":"Мы не безликая служба по номеру 1-800. LivMarkins — семейное страховое агентство, где всё строится на личном отношении, доверии и настоящей заботе. За более чем 15 лет работы в страховании мы не раз видели, насколько сложным и безличным может казаться этот процесс. Именно поэтому мы работаем по-другому.",
+"We take the time to listen, educate, and guide our clients so they can make confident decisions about protecting what matters most. Whether it’s your home, vehicles, business, or livelihood, you’re never just a policy number to us. You’re family.":"Мы внимательно выслушиваем каждого клиента, объясняем всё понятным языком и помогаем выбрать подходящую защиту, чтобы вы могли уверенно принимать решения о том, что для вас действительно важно. Дом, автомобили, бизнес или источник дохода — для нас вы никогда не будете просто номером полиса. Мы относимся к вам как к семье.",
+"Our focus is simple. Honest advice, dependable coverage, and being there when you actually need us. When questions come up or life throws a curveball, you’ll always speak to someone who knows you and truly cares.":"Наш подход прост: честные рекомендации, надёжная страховая защита и поддержка тогда, когда она действительно нужна. Если возникнут вопросы или жизнь преподнесёт неожиданность, вы всегда сможете поговорить с человеком, который знает вашу ситуацию и искренне хочет помочь.",
+"At LivMarkins Insurance, personal connection matters. We believe the best service starts with trust, honesty, and taking the time to truly understand each client’s needs.":"В LivMarkins Insurance мы ценим личное общение. Для нас хороший сервис начинается с доверия, честности и желания по-настоящему понять потребности каждого клиента.",
+"Our goal is to make insurance feel less overwhelming and more personal, so every client feels supported, informed, and confident in their coverage.":"Наша цель — сделать страхование понятнее и человечнее, чтобы каждый клиент чувствовал поддержку, был хорошо информирован и уверен в своей страховой защите.",
+"Get a Quote":"Получить расчёт","Best way to contact - Phone, email, text. Complete this form and we’ll follow up within one business day.":"Укажите удобный способ связи — телефон, электронную почту или SMS. Заполните форму, и мы свяжемся с вами в течение одного рабочего дня.",
+"Full Name *":"Имя и фамилия *","Phone *":"Телефон *","Email *":"Электронная почта *","Insurance Type *":"Вид страхования *","Select one":"Выберите вариант","Health":"Медицинское страхование","Life":"Страхование жизни","Home":"Дом","Auto":"Авто","Business Insurance":"Страхование бизнеса","Notes":"Дополнительная информация","Submit":"Отправить","Prefer phone? Call":"Предпочитаете позвонить? Звоните",
+"Here you can access important forms and downloads.":"Здесь вы найдёте необходимые формы и материалы для скачивания.","Available Downloads":"Доступные документы","CMS Marketplace Form":"Форма CMS Marketplace","Before we can begin to assist you with your health insurance needs please fill, sign, and return to us.":"Чтобы мы могли помочь вам с медицинским страхованием, пожалуйста, заполните и подпишите эту форму, а затем отправьте её нам.","Download PDF":"Скачать PDF",
+"Follow Us":"Мы в соцсетях","Lines We Cover":"Виды страхования","Company":"Компания","Home & Auto":"Дом и авто","Phone: 215-515-5975":"Телефон: 215-515-5975","Call Now":"Позвонить"
+},uk:{
+"Home":"Головна","About":"Про нас","Trucking":"Вантажні перевезення","Get a Quote":"Отримати розрахунок","Forms & Resources":"Форми та матеріали","About Us":"Про нас",
+"Our Promise":"Наша обіцянка","Personal guidance and support when you need it.":"Персональна допомога та підтримка саме тоді, коли вона вам потрібна.","Built on Relationships":"В основі — довірливі стосунки",
+"We’re not a 1-800 number, we’re a family-owned and operated insurance agency built on real relationships and real care. With over 15 years of experience in the insurance industry, we’ve seen firsthand how confusing and impersonal insurance can feel. That’s exactly why we do things differently.":"Ми не безликий сервіс за номером 1-800. LivMarkins — сімейна страхова агенція, де все будується на особистому ставленні, довірі та щирій турботі. За понад 15 років роботи у страхуванні ми не раз бачили, наскільки складним і безособовим може здаватися цей процес. Саме тому ми працюємо інакше.",
+"We take the time to listen, educate, and guide our clients so they can make confident decisions about protecting what matters most. Whether it’s your home, vehicles, business, or livelihood, you’re never just a policy number to us. You’re family.":"Ми уважно слухаємо кожного клієнта, пояснюємо все зрозумілою мовою та допомагаємо обрати належний захист, щоб ви могли впевнено приймати рішення щодо найважливішого. Дім, автомобілі, бізнес чи джерело доходу — для нас ви ніколи не будете просто номером поліса. Ми ставимося до вас як до родини.",
+"Our focus is simple. Honest advice, dependable coverage, and being there when you actually need us. When questions come up or life throws a curveball, you’ll always speak to someone who knows you and truly cares.":"Наш підхід простий: чесні поради, надійний страховий захист і підтримка тоді, коли вона справді потрібна. Якщо виникнуть запитання або життя піднесе несподіванку, ви завжди зможете поговорити з людиною, яка знає вашу ситуацію та щиро прагне допомогти.",
+"At LivMarkins Insurance, personal connection matters. We believe the best service starts with trust, honesty, and taking the time to truly understand each client’s needs.":"У LivMarkins Insurance ми цінуємо особисте спілкування. Для нас якісний сервіс починається з довіри, чесності та бажання по-справжньому зрозуміти потреби кожного клієнта.",
+"Our goal is to make insurance feel less overwhelming and more personal, so every client feels supported, informed, and confident in their coverage.":"Наша мета — зробити страхування зрозумілішим і людянішим, щоб кожен клієнт відчував підтримку, був добре поінформований і впевнений у своєму страховому захисті.",
+"Best way to contact - Phone, email, text. Complete this form and we’ll follow up within one business day.":"Вкажіть зручний спосіб зв’язку — телефон, електронну пошту або SMS. Заповніть форму, і ми зв’яжемося з вами протягом одного робочого дня.",
+"Full Name *":"Ім’я та прізвище *","Phone *":"Телефон *","Email *":"Електронна пошта *","Insurance Type *":"Вид страхування *","Select one":"Оберіть варіант","Health":"Медичне страхування","Life":"Страхування життя","Home":"Дім","Auto":"Авто","Business Insurance":"Страхування бізнесу","Notes":"Додаткова інформація","Submit":"Надіслати","Prefer phone? Call":"Зручніше телефоном? Телефонуйте",
+"Here you can access important forms and downloads.":"Тут ви знайдете необхідні форми та матеріали для завантаження.","Available Downloads":"Доступні документи","CMS Marketplace Form":"Форма CMS Marketplace","Before we can begin to assist you with your health insurance needs please fill, sign, and return to us.":"Щоб ми могли допомогти вам із медичним страхуванням, будь ласка, заповніть і підпишіть цю форму, а потім надішліть її нам.","Download PDF":"Завантажити PDF",
+"Follow Us":"Ми в соцмережах","Lines We Cover":"Види страхування","Company":"Компанія","Home & Auto":"Дім та авто","Phone: 215-515-5975":"Телефон: 215-515-5975","Call Now":"Зателефонувати"
+}};
+const originals=new WeakMap();
+const norm=s=>s.replace(/\s+/g,' ').trim();
+function apply(lang){
+ document.querySelectorAll('h1,h2,h3,p,strong,li,a,button,label,option,summary,.badge,.trucking-eyebrow,.trucking-call').forEach(el=>{
+  if(el.children.length && !['A','BUTTON'].includes(el.tagName)) return;
+  if(!originals.has(el)) originals.set(el,el.textContent);
+  const source=originals.get(el), key=norm(source);
+  if(lang==='en') el.textContent=source; else if(T[lang]?.[key]) el.textContent=T[lang][key];
+ });
+ document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(el=>{
+   if(!el.dataset.enPlaceholder) el.dataset.enPlaceholder=el.placeholder;
+   const p=el.dataset.enPlaceholder;
+   if(lang==='en') el.placeholder=p;
+   else if(p.startsWith('Tell us')) el.placeholder=lang==='ru'?'Расскажите немного о ваших потребностях (водители, имущество, бизнес и т. д.)':'Розкажіть трохи про ваші потреби (водії, майно, бізнес тощо)';
+ });
+ document.documentElement.lang=lang; localStorage.setItem('livmarkins-lang',lang);
+ document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+}
+function switcher(){
+ const d=document.createElement('div');d.className='lang-switch';d.innerHTML='<button type="button" data-lang="en">EN</button><span>·</span><button type="button" data-lang="ru">РУС</button><span>·</span><button type="button" data-lang="uk">УКР</button>';
+ d.addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(b)apply(b.dataset.lang)});return d;
+}
+document.querySelector('.nav-desktop')?.after(switcher());
+const panel=document.querySelector('.mobile-nav-panel');if(panel)panel.insertBefore(switcher(),panel.querySelector('.mobile-cta'));
+apply(localStorage.getItem('livmarkins-lang')||'en');
+})();
