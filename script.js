@@ -119,7 +119,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwpnjvvl"; // ✅ real endpoi
     const cta = document.createElement('div');
     cta.className = 'mobile-cta';
     cta.innerHTML = `
-      <a class="button" href="/LivMarkinsTest/get-a-quote/">Get a Quote</a>
+      <a class="button" href="/get-a-quote/">Get a Quote</a>
       <a class="button secondary" href="tel:+12155155975">Call Now</a>
     `;
     panel.appendChild(cta);
